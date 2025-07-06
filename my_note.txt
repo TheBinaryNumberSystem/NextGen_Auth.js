@@ -1,0 +1,65 @@
+Clone the project
+--------------------------------------------------------
+1. git clone https://github.com/AsharibAli/next-authjs-v5.git my-next-auth-project
+
+Note:- my-next-auth-project is the rename of project in your system. You can rename it with any name
+of your choice otherwise you can ignore this part and you can just clone the project without this part in such case project name in your system will be same as my github repo name for this project. 
+
+
+
+Update mail.ts file
+--------------------------------------------------------
+In the 'from' part of every mail replace the mail address with "onboarding@resend.dev"
+
+////////////////
+To update:
+1. auth.ts
+2. settings.ts (not sure)
+3. new-verification.ts (verification-token.ts, new-verification-form.tsx)
+4.  
+////////////////
+
+Installation Required
+--------------------------------------------------------
+1. npm i
+2. npm i react-icons
+3. npm i -D prisma
+4. npm i @prisma/client
+5. npx prisma generate
+
+npx prisma db push
+
+npm i @auth/prisma-adapter
+
+npm i bcrypt
+
+npm i -D @types/bcrypt
+
+npm i bcryptjs
+
+npm i -D @types/bcryptjs
+
+npm install next-auth@beta
+
+npm i uuid
+
+npm i --save-dev @types/uuid
+
+npm i resend
+
+npm i react-spinners
+
+
+//////////////
+git remote add origin https://github.com/TheBinaryNumberSystem/NextGen_Auth.js.git
+git branch -M main
+git push -u origin main
+////////////////////////////
+echo "# NextGen_Auth.js" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/TheBinaryNumberSystem/NextGen_Auth.js.git
+git push -u origin main
+////////////////////////

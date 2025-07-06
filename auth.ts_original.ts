@@ -12,7 +12,7 @@ export const {
   auth,
   signIn,
   signOut,
-  unstable_update,
+  update,
 } = NextAuth({
   pages: {
     signIn: "/auth/login",
@@ -21,7 +21,7 @@ export const {
 
   events: {
     async linkAccount({ user }) {
-      await db.user.unstable_update({
+      await db.user.update({
         where: { id: user.id },
         data: { emailVerified: new Date() },
       });
@@ -68,7 +68,7 @@ export const {
 
       if (session.user) {
         session.user.name = token.name;
-        session.user.email = token.email as string;
+        session.user.email = token.email;
         session.user.isOAuth = token.isOAuth as boolean;
       }
 
