@@ -3,7 +3,7 @@
 import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useTransition, useState } from "react";
+import { useTransition, useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import { Switch } from "@/components/ui/switch";
 import {
@@ -49,6 +49,16 @@ const SettingsPage = () => {
       isTwoFactorEnabled: user?.isTwoFactorEnabled || undefined,
     },
   });
+
+  useEffect(() => {
+    if (success) {
+      const timer = setTimeout(() => {
+        setSuccess(undefined);
+      }, 3000); // Auto-hide success message after 5 seconds
+
+      return () => clearTimeout(timer); // Cleanup timer on unmount or rerun
+    }
+  }, [success]);
 
   const onSubmit = (values: z.infer<typeof SettingsSchema>) => {
     startTransition(() => {
@@ -113,7 +123,7 @@ const SettingsPage = () => {
                       </FormItem>
                     )}
                   />
-                  <FormField
+                  {/* <FormField
                     control={form.control}
                     name="password"
                     render={({ field }) => (
@@ -148,7 +158,7 @@ const SettingsPage = () => {
                         <FormMessage />
                       </FormItem>
                     )}
-                  />
+                  /> */}
                 </>
               )}
               <FormField
