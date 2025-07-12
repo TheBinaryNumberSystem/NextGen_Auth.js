@@ -38,6 +38,7 @@ export const LoginForm = () => {
     defaultValues: {
       email: "",
       password: "",
+      code: "", //to handle, inputs to always be controlled
     },
   });
 
