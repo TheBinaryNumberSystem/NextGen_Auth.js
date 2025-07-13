@@ -132,6 +132,4 @@ Your app will be available at [http://localhost:3000](http://localhost:3000).
 
 ## 📺 Original Tutorial Source (Thanks to [Code With Antonio](https://www.youtube.com/@codewithantonio)
 
-)
-
 This Project's Tutorial: [https://youtu.be/1MTyCvS05V4](https://youtu.be/1MTyCvS05V4)
