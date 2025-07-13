@@ -1,95 +1,137 @@
-# Next Auth v5 - Advanced Guide (2025)
+# 🔐 NextGen Auth.js v5
 
-This is a repository for Next Auth v5 - Advanced Guide (2025)
+This repository is a powerful authentication system built with **Next.js 14**, **NextAuth.js v5 (Auth.js)**, and Prisma. It includes modern features like email/password login, social logins, two-factor authentication, email verification, and role-based access control.
 
-[VIDEO TUTORIAL](https://youtu.be/1MTyCvS05V4)
+---
 
-Key Features:
-- 🔐 Next-auth v5 (Auth.js)
-- 🚀 Next.js 14 with server actions
-- 🔑 Credentials Provider
-- 🌐 OAuth Provider (Social login with Google & GitHub)
-- 🔒 Forgot password functionality
-- ✉️ Email verification
-- 📱 Two factor verification
-- 👥 User roles (Admin & User)
-- 🔓 Login component (Opens in redirect or modal)
-- 📝 Register component
-- 🤔 Forgot password component
-- ✅ Verification component
-- ⚠️ Error component
-- 🔘 Login button
-- 🚪 Logout button
-- 🚧 Role Gate
-- 🔍 Exploring next.js middleware
-- 📈 Extending & Exploring next-auth session
-- 🔄 Exploring next-auth callbacks
-- 👤 useCurrentUser hook
-- 🛂 useRole hook
-- 🧑 currentUser utility
-- 👮 currentRole utility
-- 🖥️ Example with server component
-- 💻 Example with client component
-- 👑 Render content for admins using RoleGate component
-- 🛡️ Protect API Routes for admins only
-- 🔐 Protect Server Actions for admins only
-- 📧 Change email with new verification in Settings page
-- 🔑 Change password with old password confirmation in Settings page
-- 🔔 Enable/disable two-factor auth in Settings page
-- 🔄 Change user role in Settings page (for development purposes only)
+---
 
-### Prerequisites
+## ✨ Getting Started
 
-**Node version 18.7.x**
+### 1. Clone the Project
 
-### Cloning the repository
-
-```shell
-git clone https://github.com/AsharibAli/next-authjs-v5
+```bash
+git clone https://github.com/TheBinaryNumberSystem/NextGen_Auth.js.git my-next-auth-project
 ```
 
-### Install packages
+> 🔧 You can replace `my-next-auth-project` with any folder name of your choice. If you omit it, the project folder will default to the repo name: `NextGen_Auth.js`.
 
-```shell
+---
+
+---
+
+### 2. Update Mail Configuration
+
+In the `mail.ts` file, **update all instances of the `from` email** to use:
+
+```ts
+from: "onboarding@resend.dev";
+```
+
+This ensures proper email delivery via the Resend service.
+
+---
+
+---
+
+### 3. Install Dependencies
+
+Run the following commands inside your project directory:
+
+```bash
+# Install core dependencies
 npm i
-```
 
-### Setup .env file
+# UI icons
+npm i react-icons
 
-
-```js
-DATABASE_URL=
-DIRECT_URL=
-
-AUTH_SECRET=
-
-GITHUB_CLIENT_ID=
-GITHUB_CLIENT_SECRET=
-
-GOOGLE_CLIENT_ID=
-GOOGLE_CLIENT_SECRET=
-
-RESEND_API_KEY=
-
-NEXT_PUBLIC_APP_URL=
-```
-
-### Setup Prisma
-```shell
+# Prisma & database adapter
+npm i -D prisma
+npm i @prisma/client
 npx prisma generate
 npx prisma db push
+
+# Auth.js Prisma adapter
+npm i @auth/prisma-adapter
+
+# Password hashing
+npm i bcrypt
+npm i -D @types/bcrypt
+
+# Alternate bcrypt lib (used in some environments)
+npm i bcryptjs
+npm i -D @types/bcryptjs
+
+# Install NextAuth.js beta version (v5)
+npm install next-auth@beta
+
+# UUID for unique identifiers
+npm i uuid
+npm i --save-dev @types/uuid
+
+# Email service
+npm i resend
+
+# Loading spinner component
+npm i react-spinners
 ```
 
-### Start the app
+---
 
-```shell
+---
+
+### 4. Setup `.env` File
+
+Create a `.env` file in the root and fill in your credentials:
+
+```env
+DATABASE_URL="your_database_url"
+AUTH_SECRET="your_auth_secret"
+
+GITHUB_CLIENT_ID=your_github_client_id
+GITHUB_CLIENT_SECRET=your_github_client_secret
+
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+
+RESEND_API_KEY=your_resend_api_key
+```
+
+---
+
+---
+
+### 5. Start the Development Server
+
+```bash
 npm run dev
 ```
 
-## Available commands
+Your app will be available at [http://localhost:3000](http://localhost:3000).
 
-Running commands with npm `npm run [command]`
+---
 
-| command         | description                              |
-| :-------------- | :--------------------------------------- |
-| `dev`           | Starts a development instance of the app |
+---
+
+## ✨ Key Features
+
+- _NextAuth.js v5 (beta)_ with full customization
+- **Next.js 14** + **server actions**
+- **Credential login** + **OAuth with Google & GitHub**
+- 🔑 Forgot password + Email verification
+- 📱 Two-factor authentication (2FA)
+- 👥 Role-based access (Admin/User)
+- 📟 Modular components for login, register, verification, settings, etc.
+- 🔒 Protected routes, server actions, and API routes
+- 💪 Settings page to update password, email, 2FA, and roles
+- ⚙️ Utility hooks and components for current user and role
+
+---
+
+---
+
+## 📺 Original Tutorial Source (Thanks to [Code With Antonio](https://www.youtube.com/@codewithantonio)
+
+)
+
+[This Project's Tutorial: ](https://youtu.be/1MTyCvS05V4)
